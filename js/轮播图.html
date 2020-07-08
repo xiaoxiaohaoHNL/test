@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 从公共CDN引入css样式库 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .slider {
+            margin: 100px auto;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .slider .content {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 1500px;
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: inherit;
+
+        }
+
+        .slider .content li {
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 36px;
+            color: white;
+            float: left;
+            /* display: inline-block; */
+        }
+
+        .slider .content li:nth-of-type(1) {
+            background: lightseagreen;
+        }
+
+        .slider .content li:nth-of-type(2) {
+            background: lightskyblue;
+        }
+
+        .slider .content li:nth-of-type(3) {
+            background: limegreen;
+        }
+
+        .slider .content li:nth-of-type(4) {
+            background: lightsalmon;
+        }
+
+        .slider .content li:nth-of-type(5) {
+            background: lightpink;
+        }
+
+        .slider .controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            line-height: 40px;
+            margin-top: -20px;
+            color: white;
+            transition: inherit;
+
+        }
+
+        .slider .controls span {
+            background: rgba(0, 0, 0, 0.3);
+            width: 30px;
+            text-align: center;
+            transition: inherit;
+        }
+
+        .slider .controls .prev {
+            float: left;
+            border-radius: 0 5px 5px 0;
+            margin-left: -30px;
+        }
+
+        .slider .controls .next {
+            float: right;
+            border-radius: 5px 0 0 5px;
+            margin-right: -30px;
+
+
+        }
+
+        .slider .pagination {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .slider .pagination i {
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            background: white;
+            margin: 5px;
+            font-size: 0;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .slider .pagination i.active {
+            width: 10px;
+            height: 10px;
+        }
+
+        .slider.mouseon .controls span {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider banner">
+        <ul class="content">
+            <li><i class="fa fa-image">1</i></li>
+            <li><i class="fa fa-gears">2</i></li>
+            <li><i class="fa fa-sliders">3</i></li>
+            <li><i class="fa fa-code">4</i></li>
+            <li><i class="fa fa-microphone">5</i></li>
+        </ul>
+        <div class="pagination"></div>
+        <div class="controls">
+            <span class="prev"><i class="fa fa-arrow-left"></i></span>
+            <span class="next"><i class="fa fa-arrow-right"></i></span>
+        </div>
+    </div>
+    <script>
+        // var aa = document.querySelector('.content');
+        // console.log(aa)
+        function Slider(dom, bool) {
+            this.root = dom;
+            this.content = this.root.querySelector('.content')
+            this.items = this.content.querySelectorAll('li')
+            this.pagination = this.root.querySelector('.pagination')
+            this.controls = this.root.querySelector('.controls')
+            this.nextBtn = this.controls.querySelector('.next')
+            this.prevBtn = this.controls.querySelector('.prev')
+            this.current = 0
+            this.bool = bool;
+
+            this.init()
+        }
+
+        // 加
+        Slider.prototype.next = function () {
+            this.current++
+            if (this.current > this.items.length - 1) {
+                this.current = 0
+            }
+
+            this.showCurrent()
+        }
+        // 减
+        Slider.prototype.prev = function () {
+            this.current--
+            if (this.current < 0) {
+                this.current = this.items.length - 1
+            }
+
+            this.showCurrent()
+        }
+
+        // 自动轮播
+        Slider.prototype.showCurrent = function () {
+            this.content.style.left = -300 * this.current + 'px'
+            //亮点点
+            this.activeDot()
+        }
+
+        // 初始化呢 加载完成自动执行
+        Slider.prototype.init = function () {
+            var _this = this
+            // 添加事件 左右按钮 显示隐藏
+            this.root.addEventListener('mouseover', function () {
+                // 事件函数里面的this指向dom对象
+                this.classList.add('mouseon')
+                if (_this.bool.autoplay) {
+                    // 移除自动播放
+                    clearInterval(_this.autoplayId)
+                }
+
+
+
+            })
+
+            this.root.addEventListener('mouseout', function () {
+                // 事件函数里面的this指向dom对象
+                this.classList.remove('mouseon')
+                if (_this.bool.autoplay) {
+                    // 添加自动轮播
+                    _this.autoplayId = window.setInterval(function () {
+                        _this.next()
+                    }, _this.bool.time)
+                }
+
+            })
+
+            //左右按钮
+            this.prevBtn.addEventListener('click', this.prev.bind(_this))
+            // 默认 事件里面调用函数 this指向是（动态）dom对象
+            // 绑定this 锁定this 函数里面的this 不再是动态 而是固定的_this
+            this.nextBtn.addEventListener('click', this.next.bind(_this))
+
+            // 生成点点
+            if (_this.bool.dian) {
+                this.items.forEach(function (element, index) {
+                    var dot = document.createElement('i')
+                    dot.innerText = index
+                    if (this.current === index) {
+                        dot.classList.add('active')
+                    }
+                    this.pagination.appendChild(dot)
+                }, this);
+                // forEach自带this参数
+            }
+
+            // 设置自动轮播
+            if (_this.bool.autoplay) {
+                this.autoplayId = window.setInterval(function () {
+                    _this.next()
+                }, _this.bool.time)
+            }
+
+
+            // 点击小点点
+            if (_this.bool.dian) {
+                if (_this.bool.cdian) {
+                    this.pagination.querySelectorAll('i').forEach(function (element, index) {
+                        element.addEventListener('click', function () {
+                            _this.current = index
+                            _this.content.style.left = -300 * _this.current + 'px'
+                            _this.activeDot()
+                        })
+                    }, this)
+                }
+            }
+        }
+
+        // 亮点点方法
+        Slider.prototype.activeDot = function () {
+            this.pagination.querySelectorAll('i').forEach(function (element, index) {
+                if (this.current === index) {
+                    element.classList.add('active')
+                } else {
+                    element.classList.remove('active')
+                }
+            }, this)
+        }
+
+        var v = new Slider(document.querySelector('.banner'), {
+            autoplay: false,//不需要自动播放
+            time: 5000,//间隔5秒在播放
+            dian: false,//不要小点
+            cdian: true//需不需要点击
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,557 @@
+.box{
+    position: relative;
+    width: 100%;
+    /* overflow: hidden; */
+    /* height: 9999px; */
+}
+.box .topBox{
+    position: fixed;
+    top: -84px;
+    height: 84px;
+    width: 100%;
+    background: white;
+    z-index: 9999;
+}
+.box .topBox ul{
+    height: 30px;
+    float: left;
+    margin: 27px 0;
+}
+.box .topBox .ul1{
+    float: left;
+    margin-left: 35px;
+}
+.box .topBox .ul2{
+    float: right;
+    margin-right: 35px;
+}
+.box .topBox .ul1 li{
+    margin-right: 10px;
+    height: 30px;
+}
+.box .topBox .ul1 li a{
+    height: 30px;
+    display: block;
+    padding: 0;
+}
+.box .topBox .ul1 li a:hover{
+    background: transparent;
+}
+.box .topBox .ul1 li a span:nth-of-type(1){
+    color: #9C9B99;
+}
+.box .topBox .ul1 li a span{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color: black;
+}
+.box .topBox .ul2 li{
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 21px;
+}
+.box .topBox .ul2 li:last-child{
+    cursor: pointer;
+}
+.box header{
+    margin-top: 0;
+    width: 100%;
+    height: 937px;
+    background: url(./img/indexIMG.jpg) no-repeat center ;
+    background-size:  cover;
+}
+.box header .navBox{
+    position: fixed;
+    width: 100%;
+    height: 84px;
+    margin: 0;
+    background: transparent;
+    z-index: 9999;
+    transition: all .2s;
+}
+.box header .navBox  .logo{
+    display: block;
+    float: left;
+    margin: 27px 0 27px 35px;
+}
+.box header .navBox .logo img{
+    width: 75px;
+    height: 30px;
+}
+.box header .navBox .header_r{
+    float: right;
+    /* position: absolute;
+    right: 0; */
+    /* width: 525px; */
+    /* height: 30px; */
+    margin: 27px 35px 27px 0;
+    display: inline-block;
+}
+.box header .navBox .header_r li{
+    display: block;
+}
+.box header .navBox div .header_r li a:hover{
+    background: transparent;
+}
+.box header .navBox .header_r li a{
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    height: 30px;
+    padding: 0;
+    margin-left: 20px;
+    line-height: 30px;
+    color: black;
+}
+.box header .navBox .header_r li a img{
+    width: 14px;
+    height: 12px;
+}
+.box header .fontBox{
+    position: absolute;
+    top: 0;
+    padding-top: 278px;
+    left: 70px;
+    width: 30%;
+    height: 500px;
+}
+.box header .fontBox h4{
+    margin: 0 0 8xp 0;
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+}
+.box header .fontBox h1{
+    font-weight: bolder;
+    margin: 0 0 29px 0;
+    font-size: 56px;
+}
+.box header .fontBox span{
+    cursor: pointer;
+    width: 230px;
+    height: 40px;
+    display: block;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 12px;
+    line-height: 40px;
+}
+.box header .fontBox span:hover{
+    color: white;
+    background: #282828;
+}
+@media screen and (max-width: 1090px){
+    .box .topBox{
+        display: none;
+    }
+    .box header .navBox .header_r li{
+        float: right;
+        display: none;
+        transition: all 0.5s;
+    }
+    .box header .navBox .header_r li:nth-of-type(7){
+        
+        display: block;
+    }
+    .box header .navBox .header_r li:nth-of-type(8){
+        display: block;
+    }
+    .box header .navBox{
+        background: white;
+    }
+}
+.box .full{
+    width: 100%;
+    margin:95px 0 35px 0 ;
+}
+.box .full div{
+    position: relative;
+    padding: 0;
+}
+.box .full .full_l{
+    padding-left: 7%;
+    font-size: 22px;
+}
+.box .full .full_r{
+    padding-right: 7%;
+}
+.box .full .full_r a{
+    float: right;
+    font-size: 14px;
+    color: #9C9B99;
+}
+.box .good{
+    margin: 0 7% 95px 7%;
+}
+.box .good .gooBigBox{
+    border: 1px solid white;
+    padding: 0;
+}
+.box .good div .span1{
+    text-transform: uppercase;
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    font-size: 12px;
+}
+.box .good div .span2{
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    font-size: 12px;
+    color: #9C9B99;
+}
+.box .good div .goodBox{
+    position: absolute;
+    bottom: 6%;
+    width: 100%;
+    padding: 0 6%;
+}
+.box .good div .goodBox .span3{
+    float: left;
+    font-size: 12px;
+    color: #9C9B99;
+}
+.box .good div .goodBox .goodDive{
+    float: right;
+}
+.box .good div .goodBox .goodDive i{
+    border: 1px solid #9C9B99;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    display: inline-block;
+}
+.box .good div .goodBox .goodDive i:nth-of-type(1){
+    background: white;
+}
+.box .good div img{
+    width: 100%;
+    height: 100%;
+}
+.box .imgBox{
+    position: relative;
+    width: 100%;
+    min-height: 669px;
+    background: url(./img/introduce01.jpg) no-repeat center;
+    background-size: cover;
+}
+.box .twoimgBox{
+    background: url(./img/introduce02.jpg) no-repeat center;
+}
+.box .twoimgBox .twoimgDiv span{
+    width: 199px;
+}
+.box .imgBox .imgDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+.box .imgBox .imgDiv h4{
+    margin: 0 0 40px 0;
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: white;
+}
+.box .imgBox .imgDiv h1{
+    width: 80%;
+    font-weight: bolder;
+    font-size: 56px;
+    color: white;
+    text-align: center;
+    margin:  0 10% 30px 10%;
+}
+.box .imgBox .imgDiv span{
+    display: inline-block;
+    padding: 0 30px;
+    border: 1px solid white;
+    font-size: 12px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    margin: 0 0 0 50%;
+    transform: translateX(-50%);
+    color: white;
+}
+.box .threeimgBox{
+    margin: 0;
+    padding: 0;
+}
+.box .threeimgBox .imgBox_2{
+    position:relative;
+    padding: 0;
+}
+.box .threeimgBox .imgBox_2 .imgDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+}
+.box .threeimgBox .imgBox_2 .imgDiv h4{
+    margin: 0 0 40px 0;
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: white;
+}
+.box .threeimgBox .imgBox_2 .imgDiv h1{
+    width: 100%;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    /* margin:  0 2% 30px 2%; */
+}
+.box .threeimgBox .imgBox_2 .imgDiv span{
+    display: inline-block;
+    width: 100px;
+    padding: 0 5%;
+    border: 1px solid white;
+    font-size: 12px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    margin: 0 0 0 50%;
+    transform: translateX(-50%);
+    color: white;
+}.box .fourimgBox{
+    background: url(./img/introduce05.jpg) no-repeat center;
+    background-size: cover;
+}
+.foot_box{
+    width: 100%;
+    margin: 0;
+}
+.foot_box .foot_div{
+    position: relative;
+    height: 100%;
+    padding: 0;
+    height: 850px;
+    /* height: 850px; */
+    /* overflow: hidden; */
+}
+.foot_box .foot_div:nth-of-type(1){
+    background: url(./img/introduce08.jpg) no-repeat center;
+    background-size: auto 100%;
+    background-position-x: 50%;
+}
+.foot_box .foot_div:nth-of-type(2){
+    background: url(./img/introduce09.jpg) no-repeat center;
+    background-size: auto 100%;
+    background-position-x: 50%;
+}
+.foot_box .foot_div:nth-of-type(3){
+    background: url(./img/introduce10.jpg) no-repeat center;
+    background-size: auto 100%;
+    background-position-x: 50%;
+}
+.foot_box .foot_div h3{
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 1;
+    text-transform: uppercase;
+}
+.foot_box .foot_div h4{
+    position: absolute;
+    bottom: 30px;
+    font-size: 22px;
+    line-height: 1.2;
+    color: white;
+    left: 20px;
+    font-weight: 600;
+}
+footer{
+    position: relative;
+    padding: 22px 30px;
+    height: 60px;
+}
+footer span{
+    float: left;
+    font-size: 12px;
+    line-height: 16px;
+}
+footer .footer_span1{
+    margin-right: 30px;
+}
+footer .footer_span2{
+    text-transform: uppercase;
+}
+footer .footer_ul{
+    position: absolute;
+    right: 220px;
+    /* float: right; */
+    text-transform: uppercase;
+}
+footer .footer_ul li{
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 8px;
+    float: left;
+}
+footer .footer_span5{
+    float: right;
+    text-transform: uppercase;
+}
+footer .footer_right{
+    position: absolute;
+    right: 45px;
+    bottom: 22px;
+    /* float: right; */
+    display: inline-block;
+}
+footer .footer_right img{
+    margin: 0 5px;
+    width: 14px;
+    height: 14px;
+}
+/* .box . */
+@media screen and (max-width: 1440px){
+    .box header{
+        height: 850px;
+        background-size: auto 867px;
+    }
+    .box header .fontBox{
+        top: 0;
+        padding-top: 193px;
+    }
+    .box header .fontBox h1{
+        font-size: 42px;
+    }
+    .box .imgBox{
+        height: 867px;
+        background-size: auto 867px;
+    }
+    .box .imgBox .imgDiv h1{
+        font-size: 42px;
+    }
+}
+@media screen and (max-width: 1090px){
+    .box header .fontBox{
+        padding: 0;
+        width: 30%;
+        top: 600px;
+        left: 10px;
+        height: 350px;
+    }
+    .box header .fontBox h1{
+        font-size: 28px;
+    }
+    .box header .navBox .header_r{
+        width: 75px;
+        margin: 15px 35px 15px 0px;
+        height: 30px;
+    }
+    .box header .navBox .logo{
+        margin: 20px 0 20px 35px;
+    }
+    .box header .navBox .logo img{
+        height: 15px;
+    }
+    .box header .navBox{
+        height: 60px;
+    }
+    .box .imgBox{
+        height: 1332px;
+        background: url(./img/smallintroduce01.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .box .twoimgBox{
+        height: 1332px;
+        background: url(./img/smallintroduce02.jpg) no-repeat center;
+        background-size: 100% 1332px;
+    }
+    .box .imgBox .imgDiv{
+        width: 80%;
+    }
+    .box .imgBox .imgDiv h1{
+        font-size: 28px;
+    }
+    .foot_box .foot_div{
+        height: 450px;
+        background-size: cover;
+    }
+    footer{
+        padding: 40px 68px 65px 68px;
+        height: 210px;
+    }
+    footer .footer_span1{
+        position: absolute;
+        bottom: 20px;
+    }
+    footer .footer_span2{
+        position: absolute;
+        bottom: 80px;
+        text-transform: uppercase;
+    }
+    footer .footer_ul{
+        left: 68px;
+        text-transform: uppercase;
+    }
+    footer .footer_ul li{
+        text-align: left;
+        margin: 5px 0;
+        float: none;
+    }
+    footer .footer_span5{
+        float: right;
+        text-transform: uppercase;
+    }
+    footer .footer_right{
+        position: absolute;
+        right: 45px;
+        bottom: 22px;
+        display: inline-block;
+    }
+    footer .footer_right img{
+        width: 14px;
+        height: 14px;
+    }
+}
+@media screen and (max-width: 760px){
+    .box header{
+        height: 850px;
+        background-size: auto 100% ;
+    }
+    .box .full .full_r{
+        display: none;
+    }  
+    .box .full .full_l{
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        font-size: 14px;
+    }  
+    .box .good{
+        padding: 0;
+    }
+    .box .imgBox{
+        height: 1000px;
+        background: url(./img/smallintroduce01.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .box .twoimgBox{
+        height: 1000px;
+        background: url(./img/smallintroduce02.jpg) no-repeat center;
+        background-size: 100% 1000px;
+    }
+    .box .threeimgBox .imgBox_2 .imgDiv h1{
+        font-size: 14px;
+    }
+   
+}

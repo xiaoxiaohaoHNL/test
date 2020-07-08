@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+</head>
+<style>
+    ul {
+        width: 1000px;
+        height: 300px;
+        margin: 100px ;
+    }
+
+    ul li {
+        width: 200px;
+        height: 300px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        float: left;
+        text-align: center;
+    }
+
+    ul li h1 {
+        padding-left: 10px;
+        font-size: 25px;
+        margin: 50px 0 10px 0;
+    }
+
+    ul li p {   
+        padding-left: 10px;
+        font-size: 15px;
+        margin: 10px 0 0 0;
+    }
+
+    ul li img {
+        border: 2px solid transparent;
+        width: 150px;
+        height: 100px;
+        display: block;
+        margin: 30px auto 0 auto;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>
+            <h1>图片1</h1>
+            <p>文本1</p>
+            <img src="./img/hd-1.png" alt="">
+        </li>
+        <li>
+            <h1>图片2</h1>
+            <p>文本2</p>
+            <img src="./img/hd-2.png" alt="">
+        </li>
+        <li>
+            <h1>图片3</h1>
+            <p>文本3</p>
+            <img src="./img/hd-3.png" alt="">
+        </li>
+        <li>
+            <h1>图片4</h1>
+            <p>文本4</p>
+            <img src="./img/hd-4.png" alt="">
+        </li>
+        <li>
+            <h1>图片5</h1>
+            <p>文本5</p>
+            <img src="./img/hd-1.png" alt="">
+        </li>
+    </ul>
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-color/2.1.2/jquery.color.min.js"></script>
+    <script>
+        $(function () {
+
+
+            $('li').each(function (index, element) {
+                $(this).mouseover(function () {
+                    $('ul').css({
+                        'width': '1250px',
+                    })
+                    $(this).stop().animate({
+                        'width': '400px',
+                        'height': '400px',
+                        'backgroundColor': '#abcdef',
+                        'color': '#FFFFFF'
+                    }).css({
+                        'text-align': 'left'
+                    }).find('img').stop().animate({
+                        'width': '300px',
+                        'height': '200px',
+                        'margin-top': '80px',
+                        'borderColor': '#000000'
+                    })
+                })
+                $(this).mouseout(function(){
+                    console.log($(this))
+                    $(this).stop().animate({
+                        'width': '200px',
+                        'height': '300px',
+                        'color': '#000000',
+                        'backgroundColor': "transparent"
+                    }).css({
+                        'text-align': 'center',
+                    }).find('img').stop().animate({
+                        'width': '150px',
+                        'height': '100px',
+                        'margin-top': '30px',
+                        'borderColor': 'transparent'
+                    })
+                })
+            })
+            // $('ul').mouseout(function(){
+            //     $(this).css({
+            //             'width': '1000px',
+            //         })
+            // })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-color/2.1.2/jquery.color.min.js"></script>
+</head>
+<style>
+    form {
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        border: 2px solid black;
+    }
+
+    form h1 {
+        text-align: center;
+        font-weight: 800;
+    }
+
+    form label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        width: 80px;
+        height: 30px;
+        color: white;
+        font-size: 15px;
+        line-height: 30PX;
+        margin: 50px auto;
+    }
+
+    form label span {
+        position: absolute;
+        display: block;
+        width: 80px;
+        height: 30px;
+        border-radius: 15px;
+    }
+
+    form label .span_1 {
+        padding-left: 5px;
+        z-index: 0;
+        background: #75B936;
+    }
+
+    form label .span_2 {
+        padding-right: 5px;
+        z-index: 1;
+        text-align: right;
+        background: #B2B2B2;
+    }
+
+    form label div {
+        z-index: 2;
+        position: absolute;
+        top: 2px;
+        right: 52px;
+        width: 26px;
+        height: 26px;
+        background: white;
+        border-radius: 50%;
+    }
+
+    form .lab_3 .span_1 {
+        z-index: 2;
+    }
+
+    form .lab_3 div {
+        right: 2px;
+    }
+
+    form label input {
+        position: absolute;
+        z-index: 999;
+        display: none;
+    }
+</style>
+
+<body>
+    <form action="" method="get">
+        <h1>复选</h1>
+        <label class="lab_1">
+            <span class="span_1">ON</span>
+            <span class="span_2">OFF</span>
+            <div></div>
+            <input type="checkbox" name="radio" id="">
+        </label>
+        <label class="lab_2">
+            <span class="span_1">ON</span>
+            <span class="span_2">OFF</span>
+            <div></div>
+            <input type="checkbox" name="radio" id="">
+        </label>
+        <label class="lab_3">
+            <span class="span_1">ON</span>
+            <span class="span_2">OFF</span>
+            <div></div>
+            <input type="checkbox" name="radio" id="" checked>
+        </label>
+    </form>
+    <script>
+        $(function () {
+            
+                $('form label').each(function (index, element) {
+                    $(this).click(function () {
+                    var bool = $(this).find('input').prop('checked');
+                    if (bool) {
+                        $(this).find('.span_1').css({
+                            'z-index': '2'
+                        })
+                        $(this).find('.span_2').css({
+                            'z-index': '0'
+                        })
+                        $(this).find('div').stop().animate({
+                            'right': '2px'
+                        })
+                    } else{
+                        $(this).find('.span_1').css({
+                            'z-index': '0'
+                        })
+                        $(this).find('.span_2').css({
+                            'z-index': '2'
+                        })
+                        $(this).find('div').stop().animate({
+                            'right': '52px',
+                        })
+                    }
+                   
+
+
+
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>

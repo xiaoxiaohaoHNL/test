@@ -1,0 +1,82 @@
+body{
+    background: #F9F9F9;
+}
+.dl_box{
+    width: 410px;
+    height: 400px;
+    background:white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -205px;
+}
+.dl_box > .dl_top{
+    width: 410px;
+    height: 24px;
+    margin: 20px 0 30px 0;
+}
+.dl_box > .dl_top > div{
+    cursor: pointer;
+    float: left;
+    color: #666666;
+}
+.dl_box > .dl_top > div:hover{
+    color: #F87300; 
+}
+.dl_box > .dl_top  > .dl_top_active{
+    color: #F87300;   
+}
+.dl_box > .dl_top > .dl_top_l{
+    font-size: 24px;
+    line-height: 24px;
+    width: 204px;
+    text-align: center;
+    border-right: 2px solid #E0E0E0;
+}
+.dl_box > .dl_top > .dl_top_r{
+    font-size: 24px;
+    line-height: 24px;
+    width: 204px;
+    text-align: center;
+}
+.dl_box > .dl_bigBox > .dl_box1{
+    width: 410px;
+    height: 100%;
+}
+.dl_box > .dl_bigBox > .dl_box1 > input{
+    display: block;
+    width: 340px;
+    height: 48px;
+    margin: 0 auto 20px auto;
+    outline:none;
+    text-indent: 2em;
+}
+.dl_box > .dl_bigBox > .dl_box1 > button{
+    display: block;
+    width: 340px;
+    height: 50px;
+    margin: 0 auto 15px auto;
+    background: white;
+    border: 1px solid #E0E0E0;
+}
+.dl_box > .dl_bigBox > .dl_box1 > button.button_active{
+    background: #F87300;
+}
+.dl_box > .dl_bigBox > .dl_box1 > button > a{
+    display: block;
+    width: 340px;
+    font-size: 15px;
+    line-height: 50px;
+    height: 50px;
+    text-decoration: none;
+    color: black;
+}
+.dl_box > .dl_bigBox > .dl_box2{
+    width: 410px;
+    height: 400px;
+    background: url(../img/dl_01.png) no-repeat -330px -100px;
+}
+.dl_box > .dl_bigBox > .dl_active{
+    display: none;
+}

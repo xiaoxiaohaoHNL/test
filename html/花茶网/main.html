@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/body.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"></script>
+</head>
+<style>
+/* 创建动画 */
+  			@keyframes f-up {
+                0% {
+                    will-change: transform;/*优化动画卡顿1*/
+                    opacity: 0; /*初始状态 透明度为0*/
+                    transform:translateY(100px);/*初始状态 Y轴平移100px*/
+                }
+                100% {
+                    opacity: 1; /*结尾状态 透明度为1*/
+                    transform:translateY(0px);/*初始状态 恢复正常位置*/
+                }
+			}
+			@keyframes f-left {
+                0% {
+                    will-change: transform;/*优化动画卡顿1*/
+                    opacity: 0; /*初始状态 透明度为0*/
+                    transform:translateX(100px);/*初始状态 X轴平移100px*/
+                }
+                100% {
+                    opacity: 1; /*结尾状态 透明度为1*/
+                    transform:translateY(0px);/*初始状态 恢复正常位置*/
+                }
+            }
+            .f-up{
+                animation-name: f-up; /*动画名称*/
+                animation-duration: 0.8s; /*动画持续时间*/
+                animation-iteration-count: 1; /*动画次数*/
+                animation-delay: 0s; /*延迟时间*/
+			}
+		
+			.f-left{
+				animation-name: f-left; /*动画名称*/
+                animation-duration: 0.8s; /*动画持续时间*/
+                animation-iteration-count: 1; /*动画次数*/
+                animation-delay: 0s; /*延迟时间*/
+			}
+</style>
+<body>
+	<div class="box">
+		<!-- 头部导航栏 -->
+		<div class="head">
+			<div class="head_logo">
+				<img src="images/ABUIABAEGAAg_vzQ3gUox5H89AUwlwg4ygI.png">
+				<span>Tea & Teaware</span>
+			</div>
+			<div class="head_right">
+				<ul class="head_ul">
+					<li class="head_li_con"><a href="" onclick="pop();return false">首页</a></li>
+					<li><a href="" onclick="pop();return false">关于我们</a>
+					</li>
+					<li><a href="" onclick="pop();return false">产品介绍</a>
+					</li>
+					<li><a href="" onclick="pop();return false">花果茶咨询</a>
+					</li>
+					<li><a href="" onclick="pop();return false">联系我们</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 中间部分 -->
+		<div class="content_box">
+			<!-- box1 -->
+			<div class="content_box1">
+				<!-- 中间大图片 -->
+				<div class="img ">
+					<img src="images/ABUIABAEGAAgiozh3gUotpaWnAYwgA84oAY.png">
+				</div>
+				<!-- 购买商品栏 -->
+				<div class="shop vanwee donghua-l">
+					<div class="shop_top">
+						<h3>OL 轻妍系列</h3>
+						<p>DRINKS SERIES INTRODUCTION</p>
+					</div>
+					<div class="shop_bottom">
+						<ul class="shop_bottom_ul">
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUo8oSspwEwkwQ4pwQ!200x200.jpg">
+								<span><a href="">杏仁牛奶茶</a></span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUo3eqAwAYwkwQ4pwQ!200x200.jpg">
+								<span>宫廷喜悦红茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUo9sTMoQQwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUokMGf5wcwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUorPujlQYwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg5dvc5QUo0MevYTCTBDinBA!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg5dvc5QUotfPV8AcwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAgw9zc5QUowKj9sgEwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 关于我们 -->
+				<div class="we vanwee">
+					<div class="we_top">
+						<span>关于我们</span>
+						<p>ABOUT US</p>
+					</div>
+					<div class="we_bottom">
+						<ul class="we_bottom_ul">
+							<li><img src="images/ABUIABAEGAAgrubQ3gUogsOclQQwoAY4hgg!600x600.png"></li>
+							<li class="we_bottom_center">
+								<div class="we_text">
+									<h3>寻味之旅</h3>
+									<span>花果茶是一个崇尚自然，注重自我护理的轻奢时尚茶品牌。聚焦现代都市年轻人的健康问题,以“茶”为线索，将花果草木中蕴含的灵感与能量融入纷繁的都市，旨在把最新颖、最美味、最具创意的优质茶品带给用户，传播关爱自我，从零到壹的健康理念，为都市年轻人打造一种更加有态度、有温度的现代茶生活方式。</span>
+									<span>我们是一群在平凡中寻找不平凡的年轻团队，ZERO
+										ONE团队长期在全球各地寻找各种高质量的茶原料，我们专业的调茶师每年都前往世界各地的有机生态种植园进行实地评测和考察，确保每一朵花，每一片叶，从田间种植到包装入库，都做到血统清晰，品质纯正。我们的茶原料主要来之于德国工厂。</span>
+									<button type="button">查看详情</button>
+								</div>
+							</li>
+							<li><img src="images/ABUIABAEGAAgrubQ3gUogsOclQQwoAY4hgg!600x600.png"></li>
+						</ul>
+					</div>
+				</div>
+				<!-- 服务优势 -->
+				<div class="fw vanwee">
+					<div class="fw_top">
+						<h3>服务优势</h3>
+						<p>SERVICE ADVANTAGE</p>
+					</div>
+					<div class="fw_bottom">
+						<ul class="fw_bottom_ul">
+							<li>
+								<i>
+									<img src="images/AD0Iu_ufBxAEGAAgkNvLzwUo3M78zwYwUDhQ.png">
+								</i>
+								<span>优质原料</span>
+								<p>精选世界原料，德国工厂生产，采用纯正</p>
+								<p>的工艺和严苛的质量保障体系。</p>
+							</li>
+							<li>
+								<i>
+									<img src="images/AD0Iu_ufBxAEGAAgkNvLzwUo3M78zwYwUDhQ.png">
+								</i>
+								<span>优质原料</span>
+								<p>精选世界原料，德国工厂生产，采用纯正</p>
+								<p>的工艺和严苛的质量保障体系。</p>
+							</li>
+							<li>
+								<i>
+									<img src="images/AD0Iu_ufBxAEGAAgkNvLzwUo3M78zwYwUDhQ.png">
+								</i>
+								<span>优质原料</span>
+								<p>精选世界原料，德国工厂生产，采用纯正</p>
+								<p>的工艺和严苛的质量保障体系。</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 花果茶咨询 -->
+				<div class="zx vanwee">
+					<img src="images/AD0Iu_ufBxACGAAg-NrLzwUo6eX3rQIwgA84wgM.jpg">
+					<p class="zx_p">花果茶咨询NEW</p>
+				</div>
+				<!-- 运营成功 -->
+				<div class="yy vanwee">
+					<div class="yy_top">
+						<div class="yy_top1">
+							<img src="images/AD0Iu_ufBxAEGAAghdvLzwUohIX-0gIw2AQ4yAE.png">
+						</div>
+						<div class="yy_top2">
+							<h3>多家门点成功运营，单点营业，店店火爆</h3>
+							<p>Many points of success,Single point of business</p>
+							<ul class="yy_top2_ul">
+								<li>• 把握简洁明亮恬静的特点
+
+								</li>
+								<li>• 彰显烘焙名店独有的风尚品格</li>
+								<li>• 为美味的烘焙产品更高的呈现</li>
+							</ul>
+						</div>
+					</div>
+					<div class="yy_bottom">
+						<img src="images/AD0Iu_ufBxAEGAAghtvLzwUo0KSfwgcwmAI4mAI.png">
+						<img src="images/AD0Iu_ufBxAEGAAgitvLzwUooJr4oAUwmAI4mAI.png">
+						<img src="images/AD0Iu_ufBxAEGAAgitvLzwUooJr4oAUwmAI4mAI.png">
+						<img class="yy_bottom_img" src="images/AD0Iu_ufBxAEGAAgiNvLzwUosJqXjAYwmAI4mAI.png">
+					</div>
+				</div>
+			</div>
+			<!-- box2 -->
+			<div>
+				<!-- 寻味之旅 -->
+				<div class="xw">
+					<div class="xw_top">
+						<img src="images/main2-1.png">
+					</div>
+					<div class="xw_bottom donghua-l">
+						<h3>寻味之旅</h3>
+						<div class="we_text1">
+							ZEROONE花果茶是一个崇尚自然，注重自我护理的轻奢时尚茶品牌。聚焦现代都市年轻人的健康问题,以“茶”为线索，将花果草木中蕴含的灵感与能量融入纷繁的都市，旨在把最新颖、最美味、最具创意的优质茶品带给用户，传播关爱自我，从零到壹的健康理念，为都市年轻人打造一种更加有态度、有温度的现代茶生活方式。
+						</div>
+						<div class="we_text1">
+							ZEROONE花果茶是一个崇尚自然，注重自我护理的轻奢时尚茶品牌。聚焦现代都市年轻人的健康问题,以“茶”为线索，将花果草木中蕴含的灵感与能量融入纷繁的都市，旨在把最新颖、最美味、最具创意的优质茶品带给用户，传播关爱自我，从零到壹的健康理念，为都市年轻人打造一种更加有态度、有温度的现代茶生活方式。
+						</div>
+						<div class="we_img1">
+							<img src="images/main2-2.png">
+						</div>
+						<div class="we_text2">
+							ZEROONE花果茶是一个崇尚自然，注重自我护理的轻奢时尚茶品牌。聚焦现代都市年轻人的健康问题,以“茶”为线索，将花果草木中蕴含的灵感与能量融入纷繁的都市，旨在把最新颖、最美味、最具创意的优质茶品带给用户，传播关爱自我，从零到壹的健康理念，为都市年轻人打造一种更加有态度、有温度的现代茶生活方式。
+						</div>
+					</div>
+				</div>
+				<!-- 服务优势 -->
+				<div class="fw">
+					<div class="fw_top">
+						<h3>服务优势</h3>
+						<p>SERVICE ADVANTAGE</p>
+					</div>
+					<div class="fw_bottom">
+						<ul class="fw_bottom_ul">
+							<li>
+								<i>
+									<img src="images/AD0Iu_ufBxAEGAAgkNvLzwUo3M78zwYwUDhQ.png">
+								</i>
+								<span>优质原料</span>
+								<p>精选世界原料，德国工厂生产，采用纯正</p>
+								<p>的工艺和严苛的质量保障体系。</p>
+							</li>
+							<li>
+								<i>
+									<img src="images/AD0Iu_ufBxAEGAAgkNvLzwUo3M78zwYwUDhQ.png">
+								</i>
+								<span>优质原料</span>
+								<p>精选世界原料，德国工厂生产，采用纯正</p>
+								<p>的工艺和严苛的质量保障体系。</p>
+							</li>
+							<li>
+								<i>
+									<img src="images/AD0Iu_ufBxAEGAAgkNvLzwUo3M78zwYwUDhQ.png">
+								</i>
+								<span>优质原料</span>
+								<p>精选世界原料，德国工厂生产，采用纯正</p>
+								<p>的工艺和严苛的质量保障体系。</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- box3 -->
+			<div>
+				<!-- news图片 -->
+				<div class="new_top">
+					<img src="images/main3-1.png">
+				</div>
+				<!-- 购买商品栏 -->
+				<div class="shop donghua-l">
+					<div class="shop_top">
+						<h3>OL 轻妍系列</h3>
+						<p>DRINKS SERIES INTRODUCTION</p>
+					</div>
+					<div class="shop_bottom">
+						<ul class="shop_bottom_ul">
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUo8oSspwEwkwQ4pwQ!200x200.jpg">
+								<span><a href="">杏仁牛奶茶</a></span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUo3eqAwAYwkwQ4pwQ!200x200.jpg">
+								<span>宫廷喜悦红茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUo9sTMoQQwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUokMGf5wcwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg4tvc5QUorPujlQYwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg5dvc5QUo0MevYTCTBDinBA!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAg5dvc5QUotfPV8AcwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+							<li>
+								<img src="images/ABUIABACGAAgw9zc5QUowKj9sgEwkwQ4pwQ!200x200.jpg">
+								<span>杏仁牛奶茶</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- box4 -->
+			<div>
+				<!-- news图片 -->
+				<div class="new_top">
+					<img src="images/main4-1.png">
+				</div>
+				<!-- 花果茶咨询 -->
+				<div class="zx1 donghua-l">
+					<div class="zx_top">
+						<span>
+							当前位置： <a href="">首页<i>></i></a>花果茶资讯</span>
+					</div>
+					<div class="zx_bottom">
+						<div class="zx_bottom1">
+							<span class="zx_span1"></span>
+							<span class="zx_span2">花果茶咨询</span>
+							<a href="">MORE</a>
+						</div>
+						<ul class="zx_bottom2">
+							<li>
+								<img src="images/main4-3.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+							<li>
+								<img src="images/main4-4.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+							<li>
+								<img src="images/main4-5.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+							<li>
+								<img src="images/main4-6.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+							<li>
+								<img src="images/main4-7.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+							<li>
+								<img src="images/main4-8.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+							<li>
+								<img src="images/main4-6.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+							<li>
+								<img src="images/main4-8.jpg">
+								<div class="zx_bottom2_r">
+									<a href="">夏日午后来一杯花果茶</a>
+									<span>2019-08-10</span>
+									<p class="zx_bottom2_p">炎热的夏天，为很多女性带来了烦恼。吃东西不易消化、脂肪堆积、强烈的紫外线造成的皮肤黑斑等，解决这些问题其实有一种很简单又很健康的方法——喝茶。红茶、绿茶的功效就不用多说了。
+									</p>
+								</div>
+							</li>
+						</ul>
+						<div class="fanye">
+							<span class="fanye1">上一页</span>
+							<span class="fanye2">1</span>
+							<span class="fanye3">2</span>
+							<span class="fanye4">下一页</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- box5 -->
+			<div>
+				<!-- news图片 -->
+				<div class="new_top">
+					<img src="images/main5.png">
+				</div>
+				<!-- 联系我们 -->
+				<div class="lx donghua-l">
+					<div class="lx_left">
+						<div class="lx_left1">
+							<span>联系我们</span>
+						</div>
+						<div class="lx_left2">
+							<p>联系邮箱：zeroone01@foxmail.com</p>
+							<p>联系电话：0755-28915891</p>
+							<p>联系地址：深圳市龙岗区中心城天誉二期10栋A座</p>
+						</div>
+						<div class="lx_left3">
+							<ul class="lx_left3_ul">
+								<li>
+									<img src="images/main5-1.jpg">
+									<p>零壹风味茶服务号</p>
+								</li>
+								<li>
+									<img src="images/main5-2.jpg">
+									<p>零壹风味茶订阅号</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="lx_right">
+						<p class="lx_right_p">发表你的留言</p>
+						<div class="lx_right1">
+							<div class="lx_right_center1">
+								<span>姓名：</span>
+								<input type="text" name="" id="" value="" />
+							</div>
+							<div class="lx_right_center1">
+								<span>邮箱：</span>
+								<input type="text" name="" id="" value="" />
+							</div>
+							<div class="lx_right_center1">
+								<span>电话：</span>
+								<input type="text" name="" id="" value="" />
+							</div>
+						</div>
+						<div class="lx_right2">
+							<span>内容:</span>
+							<textarea placeholder="留言需审核后才会显示"></textarea>
+						</div>
+						<div class="lx_right3">
+							<input type="button" name="" id="" value="提交留言" />
+						</div>
+					</div>
+				</div>
+
+				<!-- 地图 -->
+				<div id="ditu">
+					<!-- <img src="images/ditu.png"> -->
+				</div>
+			</div>
+		</div>
+		<!-- 底部 -->
+		<div class="foot_top">
+			<div class="foot_top_text">
+				<div class="foot_top_text1 foot_top_texti1">
+					<i></i>
+					<span><img src="images/AD0Iu_ufBxAEGAAgmtvLzwUo_LmkqQcwHjgf.png"></span>
+					<span>
+						<p>地址</p>
+						<p>深圳市龙岗区中心城万科</p>
+						<p>天誉二期10栋A座</p>
+					</span>
+				</div>
+				<div class="foot_top_text1 foot_top_text2">
+					<i></i>
+					<span><img src="images/AD0Iu_ufBxAEGAAgmtvLzwUo_LmkqQcwHjgf.png"></span>
+					<span>
+						<p>地址</p>
+						<p>深圳市龙岗区中心城万科</p>
+						<p>天誉二期10栋A座</p>
+					</span>
+				</div>
+				<div class="foot_top_text1 foot_top_text3">
+					<i></i>
+					<span><img src="images/AD0Iu_ufBxAEGAAgmtvLzwUo_LmkqQcwHjgf.png"></span>
+					<span>
+						<p>地址</p>
+						<p>深圳市龙岗区中心城万科</p>
+						<p>天誉二期10栋A座</p>
+					</span>
+				</div>
+			</div>
+			<div class="foot_soild">
+				<img class="soild" src="images/AD0Iu_ufBxAEGAAgmdvLzwUo8PeZ3wMwhgg4Hg.png">
+			</div>
+			<div class="foot_bottom_text">
+				<div class="foot_bottom_text1">
+					<a href="">首页</a>
+					<span>|</span>
+					<a href="">关于我们</a>
+					<span>|</span>
+					<a href="">产品介绍</a>
+					<span>|</span>
+					<a href="">花果茶咨询</a>
+					<span>|</span>
+					<a href="">联系我们</a>
+				</div>
+			</div>
+		</div>
+		<div class="foot_bottom">
+			<p>©2019 深圳市前海金玉鸿飞贸易有限公司 版权所有</p>
+			<div class="foot_bottom1">
+				<a href="">手机版</a>
+				<span>|</span>
+				<a href="">本站使用</a>
+				<a href=""><i></i>凡科建站 搭建</a>
+				<span>|</span>
+				<a href="">管理登录</a>
+				<span>|</span>
+				<a href="">粤ICP备18121599号</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq-无缝轮播图</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+</head>
+<style>
+    * {
+        list-style: none;
+    }
+
+    .box {
+        position: relative;
+        width: 1200px;
+        height: 460px;
+        margin: 100px auto
+            /* border: 2px solid red */
+    }
+
+    .box>.banner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: lawngreen;
+    }
+
+    .box>.banner>ul {
+        position: absolute;
+        left: 0;
+        width: 1000%;
+        height: 100%;
+    }
+
+    .box>.banner>ul>li {
+        width: 10%;
+        height: 100%;
+        float: left;
+    }
+
+    .box>.banner>ul>li>img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .box>.jt {
+        height: 20%;
+        width: 100%;
+        /* background: red; */
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .box>.jt>.next {
+        cursor: pointer;
+        float: left;
+        display: block;
+        width: 5%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .box>.jt>.prev {
+        cursor: pointer;
+        float: right;
+        display: block;
+        width: 5%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .box>.yuan {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+    }
+
+    .box>.yuan>ol {
+        width: 5%;
+        margin: auto;
+    }
+
+    .box>.yuan>ol>li {
+        cursor: pointer;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: red;
+        margin: 0 2px;
+    }
+    .box>.yuan>ol>li:hover{
+        background: white;
+    }
+    .box>.yuan>ol>li.active {
+        background: white;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="banner">
+            <ul></ul>
+        </div>
+        <div class="jt">
+            <span class="next"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+            <span class="prev"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="yuan">
+            <ol></ol>
+        </div>
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.box').banner({
+                data: [
+                    {
+                        src: "./img/01.jpg"
+                    },
+                    {
+                        src: "./img/02.jpg"
+                    },
+                    {
+                        src: "./img/03.jpg"
+                    },
+                    {
+                        src: "./img/04.jpg"
+                    },
+                ]
+            })
+        })
+        $.fn.banner = function(obj){
+            console.log(obj)
+            var data = obj.data;
+            var len = data.length;
+            var u_html = "";
+            var o_html = "";
+            for(var i = 0; i < len; i++){
+                u_html+='<li><img src="'+data[i].src+'" alt=""></li>'
+                o_html+='<li></li>'
+            }
+            u_html+='<li><img src="'+data[0].src+'" alt=""></li>'
+            console.log(u_html)
+            $(this).find("ul").html(u_html)
+            $(this).find("ol").html(o_html)
+            $(this).find("ol").children().eq(0).addClass("active")
+
+            var index = 0;
+            var key = 0;
+            var timer = null;
+            var u_width = $(this).find("ul").children().eq(0).width();
+            var $ul = $(this).find("ul");
+            // 自动轮播
+            var autoplay = function(){
+                index++
+                if(index > len){
+                    index = 1;
+                    $ul.css("left",0)
+                }
+                $ul.animate({
+                left:-(index*u_width)
+            },300)
+            // 圆点
+            key++;
+            key = key > len-1 ? 0 : key;
+            $("ol").children().removeClass("active");
+            $("ol").children().eq(key).addClass("active");
+            }
+
+            timer = setInterval(autoplay,1500)
+            $(".box").mouseover(function(){
+                clearInterval(timer);
+            })
+            $(".box").mouseout(function(){
+                clearInterval(timer);
+                timer = setInterval(autoplay,1500);    
+            })
+
+            //右
+            $(".prev").click(function(){
+                index++;
+                if(index > len){
+                    index = 1;
+                    $ul.css("left",0)
+                }
+                $ul.animate({
+                left:-(index*u_width)
+            },300)
+            key++;
+            key = key > len-1 ? 0 : key;
+            $("ol").children().removeClass("active");
+            $("ol").children().eq(key).addClass("active");
+            })
+            //左
+            $(".next").click(function(){
+                index--;
+                if(index < 0){
+                    index = len-1;
+                    console.log(index)
+                    $ul.css("left",-len*u_width)
+                }
+                $ul.animate({
+                left:-(index*u_width)
+            },300)
+            key--;
+            key = key < 0 ? len-1 : key;
+            $("ol").children().removeClass("active");
+            $("ol").children().eq(key).addClass("active");
+            })
+            // 圆点点击
+            $("ol li").click(function(){
+                index = $(this).index();
+                key = $(this).index()
+                console.log(index)
+                $(this).addClass("active").siblings().removeClass("active");
+                console.log(index)
+                $ul.animate({
+                left:-(index*u_width)
+            },300)
+            
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -70,7 +70,8 @@
 	z-index:99;
 	width: 1200px;
 	height: 68px;
-	margin: 0 160px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 .head_dhl_1{
 	float: left;
@@ -136,6 +137,7 @@
 	width: 1519px;
 	height: 523px;
 	overflow: hidden;
+	margin: auto;
 }
 /* 轮播图end */
 /* 轮播图文字 */
@@ -146,6 +148,7 @@
 	/* border: 1px solid red; */
 	position: absolute;
 	top:120px;
+	left: 50px;
 }
 .lbt_font_l{
 	background: rgba(255,255,255,0.6);
@@ -630,7 +633,7 @@
 .foot{
 	width: 1200px;
 	height: 398px;
-	margin: 0 160px;
+	margin: 0 355px;
 }
 .foot_l{
 	width: 920px;
@@ -661,7 +664,7 @@
 .foot_r{
 	position: absolute;
 	top: 190px;
-	right: 160px;
+	right: 300px;
 	width: 214px;
 	height: 180px;
 	/* background: red; */

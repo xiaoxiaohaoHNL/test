@@ -5,231 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <title>xxhao</title>
 </head>
-<style>
-    html {
-        width: 100%;
-        height: 100%;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    body {
-        width: 100%;
-        height: 100%;
-    }
-
-    .box {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .box .oneBox {
-        position: absolute;
-        background: #B4ABE3;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-
-    .box .oneBox h1 {
-        padding-top: 40px;
-        font-size: 20px;
-        text-align: center;
-        color: white;
-        width: 30px;
-        height: 100%;
-        background: #666699;
-    }
-
-    .box .twoBox {
-        position: absolute;
-        transform: translateX(30px);
-        background: #D7D1F2;
-        width: 100%;
-        height: 150%;
-        z-index: 2;
-        transition: all cubic-bezier(0, 0, 0, 1.02) 1s;
-        transform-origin: 550px 225px;
-    }
-
-    .box .twoBox h1 {
-        padding-top: 40px;
-        font-size: 20px;
-        text-align: center;
-        color: white;
-        width: 30px;
-        height: 100%;
-        background: #660066;
-    }
-
-    .box .twoBox .twoBox_ul {
-        position: absolute;
-        top: 200px;
-        left: 200px;
-        width: 600px;
-        height: 300px;
-        border: 1px solid red;
-        overflow: hidden;
-    }
-
-    .box .twoBox .twoBox_ul li {
-        position: absolute;
-        height: 100%;
-        transition: all 1s;
-        transform-origin: 550px 225px;
-    }
-
-    .box .twoBox .twoBox_ul li:nth-of-type(1) {
-        width: 100%;
-        background: red;
-    }
-
-    .box .twoBox .twoBox_ul li:nth-of-type(2) {
-        width: 95%;
-        background: yellow;
-        transform: translateX(30px);
-    }
-
-    .box .twoBox .twoBox_ul li:nth-of-type(3) {
-        width: 90%;
-        background: green;
-        transform: translateX(60px);
-    }
-
-    .box .twoBox .twoBox_ul li:nth-of-type(4) {
-        width: 85%;
-        background: black;
-        transform: translateX(90px);
-    }
-
-    .box .twoBox .twoBox_ul li:nth-of-type(5) {
-        width: 80%;
-        background: blue;
-        transform: translateX(120px);
-    }
-
-    .box .twoBox .twoBox_ul li.active1 {
-        transform: translate3d(505px, -455px, 0px) rotate(-45deg);
-    }
-
-    .box .twoBox .twoBox_ul li.active2 {
-        transform: translate3d(475px, -455px, 0px) rotate(-45deg);
-    }
-
-    .box .twoBox .twoBox_ul li.active3 {
-        transform: translate3d(445px, -455px, 0px) rotate(-45deg);
-    }
-
-    .box .twoBox .twoBox_ul li.active4 {
-        transform: translate3d(415px, -455px, 0px) rotate(-45deg);
-    }
-
-    .box .twoBox .twoBox_ul li.active5 {
-        transform: translateX(0);
-    }
-</style>
 
 <body>
-    <!-- <div>
-        <h2>静态html项目</h2>
-        <a href="./html/花茶网/main.html">花茶网</a>
-        <a href="./html/仿小米/首页.html">仿小米</a>
-        <a href="./html/仿vivo/Home page(主页面).html">仿vivo</a>
-    </div>
-    <div>
-        <h2>js项目</h2>
-        <a href="./js/轮播图.html">js轮播图</a>
-    </div>
-    <div>
-        <h2>jq项目</h2>
-        <a href="./jq/单选按钮.html">单选按钮</a>
-        <a href="./jq/复选按钮.html">复选按钮</a>
-        <a href="./jq/手风琴.html">手风琴</a>
-        <a href="./jq/放大镜.html">放大镜</a>
-        <a href="./jq/轮播图封装.html">轮播图封装</a>
-    </div>
-    <div>
-        <h2>bootstrap项目</h2>
-        <a href="./bootstrap/bootstrap_01/test.html">bootstrap页面</a>
-        <a href="./bootstrap/bootstrap_02/index.html">bootstrap页面</a>
-    </div> -->
     <div class="box">
-        <div class="oneBox">
-            <h1>项目介绍</h1>
-            <div>
-                <h1>html项目</h1>
+        <!-- 个人介绍 -->
+        <div class="user">
+            <div class="img">
+                <img src="http://302chanwoo.com/static/images/hwabada/main/302chanwoo_white.svg" alt="">
             </div>
-            <div>
-                <h1>js项目</h1>
+            <div class="job">web前端开发工程师</div>
+            <div class="name">徐佳豪</div>
+        </div>
+        <!-- 技能介绍 -->
+        <div class="skill">
+            <h1>技能</h1>
+            <div>HTML/HTML5/CSS/CSS3/JS/jq/ES6/bootstrap/vue</div>
+        </div>
+        <!-- 项目展示 -->
+        <div class="project">
+            <h1>html静态页面</h1>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./html/去哪儿/main.html">去哪儿仿站</a>
+                    <div class="xian"></div>
+                </div>
             </div>
-            <div>
-                <h1>jq项目</h1>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./html/花茶网/main.html">花茶网</a>
+                    <div class="xian"></div>
+                </div>
             </div>
-            <div>
-                <h1>bootstarp项目</h1>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./html/仿小米/首页.html">小米仿站</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./html/仿vivo/Home page(主页面).html">vivo仿站</a>
+                    <div class="xian"></div>
+                </div>
             </div>
         </div>
-        <div class="twoBox">
-            <h1 class="twoBox_h1">信息介绍</h1>
-            <!-- <ul class="twoBox_ul">
-                <li data-active="active5" data-index="5"></li>
-                <li data-active="active4" data-index="4"></li>
-                <li data-active="active3" data-index="3"></li>
-                <li data-active="active2" data-index="2"></li>
-                <li data-active="active1" data-index="1"></li>
-            </ul> -->
+        <div class="project">
+            <h1>js案例</h1>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./js/snake/index.html">贪吃蛇</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./js/飞机大战/index.html">飞机大战</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+        </div>
+        <div class="project">
+            <h1>bootstrap案例</h1>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./bootstrap/bootstrap_01/test.html">bootstrap1</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./bootstrap/bootstrap_02/index.html">bootstrap2</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+        </div>
+        <div class="project">
+            <h1>html/css3案例</h1>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./html5-css3/拼图游戏/拼图游戏.html">拼图游戏</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./html5-css3/加载动画.html">加载动画</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./html5-css3/动画效果/index.html">动画效果</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
+        </div>
+        <div class="project">
+            <h1>接口案例</h1>
+            <div class="pro_box">
+                <div class="pro_div">
+                    <a href="./抗击疫情/test.html">抗击疫情</a>
+                    <div class="xian"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-<script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
-<script>
-    var boo = true;
-    $('.twoBox_h1').click(function () {
-        if (boo) {
-            $('.twoBox').css({
-                transform: 'translate3d(90%, -455px, 0px) rotate(-45deg)'
-            })
-            boo = false;
-        } else {
-            $('.twoBox').css({
-                transform: 'translateX(30px)'
-            })
-            boo = true;
-        }
-    })
-    // var bool = false;
-    // $('.twoBox_ul li').click(function () {
-    //     var data = $(this).data('active');
-    //     var dataIndex = $(this).data('index')
-    //     if (!bool) {
-    //         console.log("aa")
-    //         $(this).addClass(data)
-    //         bool = true;
-    //     } else {
-    //         for (var i = 0; i < $('.twoBox_ul li').length - 1; i++) {
-    //             if ($(this).attr('class') != '') {
-    //                 for (var j = 0; j < $('.twoBox_ul li').length - 1; j++) {
-    //                     if ($('.twoBox_ul li').eq(j).data('index') > dataIndex) {
-    //                         console.log("bb")
-    //                         $('.twoBox_ul li').eq(j).remove($('.twoBox_ul li').eq(j).data('active'))
-    //                     }
-    //                 }
-    //             }
-
-    //         }
-    //         bool = false;
-    //     }
-
-
-    // })
-</script>
 
 </html>

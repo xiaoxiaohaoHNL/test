@@ -1,0 +1,436 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #FFCC99, #CCFF99, #CCCCCC);
+}
+.box {
+  width: 100%;
+  height: 100%;
+}
+.box .smallbox {
+  width: 33%;
+  height: 400px;
+  float: left;
+}
+.box .smallbox .oneBox {
+  position: relative;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.box .smallbox .oneBox .box1_top {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(135deg, #ECAB18 50%, #1AD280 -100%);
+  transition: all 1s;
+}
+.box .smallbox .oneBox .box1_btn .box1_img {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  left: 10px;
+  top: 10px;
+  overflow: hidden;
+}
+.box .smallbox .oneBox .box1_btn .box1_img img {
+  width: 100%;
+  height: 100%;
+}
+.box .smallbox .oneBox .box1_btn .box1_text {
+  border-radius: 50%;
+  opacity: 0;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  left: 10px;
+  top: 10px;
+  transition: all 1s;
+}
+.box .smallbox .oneBox .box1_btn .box1_text h1 {
+  margin-top: 20px;
+  font-size: 28px;
+  line-height: 1.2;
+  padding-bottom: 10px;
+}
+.box .smallbox .oneBox .box1_btn .box1_text p {
+  border-top: 1px solid white;
+  padding-top: 10px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.box .smallbox .oneBox .box_top {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 15px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  overflow: hidden;
+  background: url("img/2.jpg") no-repeat center;
+  background-size: 200px 200px;
+  transition: all 1s;
+}
+.box .smallbox .oneBox .box_btn {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: -200px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s;
+  z-index: 10;
+}
+.box .smallbox .oneBox .box_btn h1 {
+  margin-top: 20px;
+  font-size: 30px;
+  line-height: 1.2;
+  padding-bottom: 10px;
+}
+.box .smallbox .oneBox .box_btn p {
+  font-style: italic;
+  border-top: 1px solid white;
+  padding-top: 10px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.box .smallbox .box1:hover .box1_top {
+  transform: rotateZ(90deg);
+}
+.box .smallbox .box1:hover .box1_btn .box1_text {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+.box .smallbox .box2:hover .box2_top {
+  transform: rotateZ(90deg);
+}
+.box .smallbox .box2:hover .box2_btn {
+  right: 0;
+  opacity: 1;
+}
+.box .smallbox .box3 .box3_top {
+  z-index: 999;
+  transform-origin: left center;
+}
+.box .smallbox .box3:hover .box3_top {
+  transform: scale(0.5);
+}
+.box .smallbox .box3:hover .box3_btn {
+  right: -50px;
+  opacity: 1;
+}
+.box .smallbox .box4 .box4_top {
+  left: 0;
+}
+.box .smallbox .box4:hover .box4_top {
+  left: -200px;
+  opacity: 0;
+}
+.box .smallbox .box4:hover .box4_btn {
+  right: 0;
+  opacity: 1;
+}
+.box .smallbox .box5 .box5_top {
+  left: 0;
+  top: 0;
+}
+.box .smallbox .box5 .box5_btn {
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+.box .smallbox .box5:hover .box5_btn {
+  opacity: 1;
+}
+.box .smallbox .box6 .box6_top {
+  left: 0;
+  top: 0;
+}
+.box .smallbox .box6 .box6_btn {
+  left: 0;
+  top: 0;
+}
+.box .smallbox .box6:hover .box6_top {
+  transform: scale(2);
+  opacity: 0;
+}
+.box .smallbox .box6:hover .box6_btn {
+  opacity: 1;
+}
+.box .smallbox .box7 .box7_top {
+  left: 0;
+}
+.box .smallbox .box7:hover .box7_top {
+  transform: scale(0.5);
+  opacity: 0;
+}
+.box .smallbox .box7:hover .box7_btn {
+  right: 0;
+  opacity: 1;
+}
+.box .smallbox .box8:hover .box8_top {
+  animation-name: eightboxStar;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+.box .smallbox .box8:hover .box8_btn {
+  animation-delay: 0.4s;
+  animation-name: eightboxStop;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+.box .smallbox .box9 .box9_top {
+  left: 0;
+}
+.box .smallbox .box9 .box9_btn {
+  right: 0;
+  transform: scale(0.5);
+}
+.box .smallbox .box9:hover .box9_top {
+  transform: rotateZ(180deg);
+  left: 200px;
+  opacity: 0;
+}
+.box .smallbox .box9:hover .box9_btn {
+  transform: scale(1);
+  opacity: 1;
+}
+.box .smallbox .box10 .box10_top {
+  transform-origin: bottom center;
+  z-index: 999;
+}
+.box .smallbox .box10 .box10_btn {
+  right: 0;
+  transform: scale(0.5);
+}
+.box .smallbox .box10:hover .box10_top {
+  transform: scale(0.3);
+}
+.box .smallbox .box10:hover .box10_btn {
+  transform: scale(1);
+  opacity: 1;
+}
+.box .smallbox .box11 .box11_btn {
+  right: 0;
+  transform: scale(0.5);
+}
+.box .smallbox .box11:hover .box11_top {
+  transform: scale(0.5) rotateY(180deg);
+  opacity: 0;
+}
+.box .smallbox .box11:hover .box11_btn {
+  transition-delay: 0.5s;
+  transform: scale(1);
+  opacity: 1;
+}
+.box .smallbox .box12 .box12_top {
+  left: 0;
+}
+.box .smallbox .box12 .box12_btn {
+  transform: rotateZ(180deg);
+}
+.box .smallbox .box12:hover .box12_top {
+  transform: rotateZ(180deg);
+  left: 200px;
+  opacity: 0;
+}
+.box .smallbox .box12:hover .box12_btn {
+  transition-delay: 0.5s;
+  right: 0;
+  transform: rotateZ(0);
+  opacity: 1;
+}
+.box .smallbox .box13 .box13_top {
+  left: 0;
+}
+.box .smallbox .box13 .box13_btn {
+  right: 0;
+}
+.box .smallbox .box13 .box13_btn h1 {
+  width: 200px;
+  transition: all 1s;
+  position: absolute;
+  left: -200px;
+}
+.box .smallbox .box13 .box13_btn p {
+  display: block;
+  width: 200px;
+  transition: all 1s;
+  position: absolute;
+  right: -200px;
+  top: 100px;
+}
+.box .smallbox .box13:hover .box13_btn {
+  opacity: 1;
+}
+.box .smallbox .box13:hover .box13_btn h1 {
+  left: 0;
+}
+.box .smallbox .box13:hover .box13_btn p {
+  right: 0;
+}
+.box .smallbox .box14 .box14_top {
+  transform-origin: right center;
+}
+.box .smallbox .box14 .box14_btn {
+  right: 0;
+  transform: rotateY(90deg);
+  transform-origin: left center;
+}
+.box .smallbox .box14:hover .box14_top {
+  transform: rotateY(90deg);
+  opacity: 0;
+}
+.box .smallbox .box14:hover .box14_btn {
+  transition-delay: 0.5s;
+  transform: rotateY(0);
+  opacity: 1;
+}
+.box .smallbox .box15 .box15_btn {
+  right: 0;
+  transform: rotateZ(-360deg) scale(0.5);
+}
+.box .smallbox .box15:hover .box15_top {
+  transform: rotateZ(360deg) scale(0.5);
+  opacity: 0;
+}
+.box .smallbox .box15:hover .box15_btn {
+  transition-delay: 0.5s;
+  transform: rotateZ(0) scale(1);
+  opacity: 1;
+}
+.box .smallbox .box16 {
+  overflow: none;
+}
+.box .smallbox .box16 .box16_top {
+  z-index: 999;
+  transform-origin: 89% 25%;
+}
+.box .smallbox .box16 .box16_btn {
+  right: 0;
+  opacity: 1;
+}
+.box .smallbox .box16 .dian {
+  position: absolute;
+  left: 87%;
+  top: 25%;
+  width: 7px;
+  height: 7px;
+  background: black;
+  border-radius: 50%;
+  z-index: 9999;
+}
+.box .smallbox .box16:hover .box16_top {
+  transform: rotateZ(-130deg);
+}
+.box .smallbox .box17 .box17_btn {
+  right: 0;
+}
+.box .smallbox .box17 .box17_btn h1 {
+  transition: all 1s;
+  transform: scale(0.5);
+}
+.box .smallbox .box17 .box17_btn p {
+  transition: all 1s;
+  transform: scale(0.5);
+}
+.box .smallbox .box17:hover .box17_btn {
+  opacity: 1;
+}
+.box .smallbox .box17:hover .box17_btn h1 {
+  transform: scale(1);
+}
+.box .smallbox .box17:hover .box17_btn p {
+  transform: scale(1);
+}
+.box .smallbox .box18 {
+  -webkit-perspective: 500;
+}
+.box .smallbox .box18 .box18_top {
+  z-index: 999;
+  transform-origin: top center;
+}
+.box .smallbox .box18 .box18_btn {
+  right: 0;
+  opacity: 1;
+}
+.box .smallbox .box18:hover .box18_top {
+  transform: rotateX(180deg);
+}
+.box .smallbox .box19 .box19_btn {
+  right: 0;
+  transform: scale(0.5);
+  transition: all 0.5s;
+}
+.box .smallbox .box19:hover .box19_btn {
+  transform: scale(1);
+  opacity: 1;
+}
+.box .smallbox .box20 {
+  -webkit-perspective: 500;
+}
+.box .smallbox .box20 .box20_top {
+  transform-origin: bottom center;
+}
+.box .smallbox .box20 .box20_btn {
+  right: 0;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+}
+.box .smallbox .box20:hover .box20_top {
+  transform: rotateX(-90deg);
+  opacity: 0;
+}
+.box .smallbox .box20:hover .box20_btn {
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: rotateX(0);
+}
+@keyframes eightboxStar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5) translateX(0);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.5) translateX(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(-200px);
+    opacity: 0;
+  }
+}
+@keyframes eightboxStop {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0.5);
+    right: 0;
+  }
+  100% {
+    transform: scale(1);
+    right: 0;
+    opacity: 1;
+  }
+}

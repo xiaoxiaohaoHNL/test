@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/test.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_top">
+            <!-- 国内 -->
+            <div class="domestic top_div active">国内</div>
+            <!-- 国外 -->
+            <div class="abroad top_div">国外</div>
+            <!-- 全球 -->
+            <div class="global top_div">全球</div>
+        </div>
+        <div class="box_btn">
+            <!-- 国内 -->
+            <div class="domestic_data box_data data_active">
+                <h1 class="title">国内疫情</h1>
+                <!-- 详细数据 -->
+                <div class="data">
+                    <ul class="data_ul box_ul">
+                        <li>
+                            <h1>累计确诊</h1>
+                            <p class="diagnosis"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="diagnosis_span"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>累计治愈</h1>
+                            <p class="cure"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="cure_span"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>累计死亡</h1>
+                            <p class="death"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="death_span"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>现有确诊</h1>
+                            <p class="currentDiagnosis"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="currentDiagnosis_span"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>境外输入确证</h1>
+                            <p class="overseas"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="overseas_span"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>现有疑似</h1>
+                            <p class="suspected"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="suspected_span"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 城市数据 -->
+                <div class="city">
+                    <dl class="city_dl">
+                        <dt class="city_dt">
+                            <dl>
+                                <dd>地区</dd>
+                                <dd>现有确诊</dd>
+                                <dd>累计确诊</dd>
+                                <dd>死亡</dd>
+                                <dd>治愈</dd>
+                            </dl>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <!-- 国外 -->
+            <div class="abroad_data box_data ">
+                <h1 class="title">国外疫情</h1>
+                <!-- 详细数据 -->
+                <div class="data">
+                    <ul class="data_ul box_ul">
+                        <li>
+                            <h1>累计确诊</h1>
+                            <p class="abroadDiagnosis"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="abroadDiagnosis_span"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>现有确诊</h1>
+                            <p class="abroadCurrent"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="abroadCurrent_span" style ='color:orange'></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>累计治愈</h1>
+                            <p class="abroadCure"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="abroadCure_span" style ='color:green'></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>累计死亡</h1>
+                            <p class="abroadDeath"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="abroadDeath_span" style ='color:#C4C7CE'></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>美国确诊</h1>
+                            <p class="america"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="america_span">2799</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>巴西确诊</h1>
+                            <p class="brazil"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span>+2731</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>印度确诊</h1>
+                            <p class="india"></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span>+23652</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>俄罗斯确诊</h1>
+                            <p class="russia">1111</p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span>+5848</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 城市数据 -->
+                <div class="city">
+                    <dl class="city_dl abroad_dl">
+                        <dt class="city_dt">
+                            <dl>
+                                <dd>地区</dd>
+                                <dd>现有确诊</dd>
+                                <dd>累计确诊</dd>
+                                <dd>死亡</dd>
+                                <dd>治愈</dd>
+                            </dl>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <!-- 全球 -->
+            <div class="global_data box_data">
+                <h1 class="title">全球疫情</h1>
+                <!-- 详细数据 -->
+                <div class="data">
+                    <ul class="data_ul box_ul">
+                        <li>
+                            <h1>累计确诊</h1>
+                            <p class="globalCumulative" >8650</p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="globalCumulative_span"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>现有确诊</h1>
+                            <p class="globalExisting" style ='color:orange'></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="globalExisting_span" style ='color:orange'></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>累计治愈</h1>
+                            <p class="globalCure" style ='color:green'></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="globalCure_span" style ='color:green'></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h1>累计死亡</h1>
+                            <p class="globalDeath" style ='color:#C4C7CE'></p>
+                            <div class="data_li_btn">
+                                <span>较上日</span>
+                                <span class="globalDeath_span" style ='color:#C4C7CE'></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./js/test.js"></script>
+</body>
+
+</html>

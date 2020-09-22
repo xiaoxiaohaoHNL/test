@@ -1,0 +1,29 @@
+html , body , ul , ol , h3 {
+    padding: 0;
+    margin: 0;
+}
+ul , ol  {
+    list-style: none;
+}
+
+.map {
+    width: 600px;
+    height: 600px;
+    background-color: skyblue;
+    margin: 0 auto;
+}
+.map ul { /*20 行*/
+    height: 30px;
+}
+.map ul li { /*20 列*/
+    width:28px;
+    height: 28px;
+    border: 1px solid white;
+    float: left;
+}
+.map ul li.snake {
+    background-color: blue;
+}
+.map ul li.egg {
+    background-color: yellow;
+}

@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+.stage {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 500px;
+  height: 500px;
+  background: lightblue;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: relative;
+}
+.stage li {
+  background: lightcoral;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px white inset;
+  background-image: url("../jq22.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
